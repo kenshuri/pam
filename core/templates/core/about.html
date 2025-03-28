@@ -1,0 +1,122 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+Petites Annonces Théâtre
+{% endblock title %}
+
+{% block main %}
+<div class="bg-base-100 rounded p-4 mt-2 prose max-w-none">
+    <h2 class="text-xl">
+        🎶 Bienvenue sur <a href="{% url 'index' %}" class="link">petites-annonces-musique</a>, votre site dédié aux petites annonces pour le monde musical !
+    </h2>
+
+    <h2 class="text-lg font-bold mt-2">
+        🎯 Notre mission
+    </h2>
+    <p>
+        Nous avons créé ce site pour répondre à un besoin essentiel : permettre aux <strong> musiciens, professeurs, ensembles, techniciens et passionnés de musique</strong> de se rencontrer, d’échanger et de collaborer.
+        Que vous soyez à la recherche d’un musicien pour un projet, d’un professeur de piano, d’un chœur à rejoindre ou que vous souhaitiez proposer vos services ou annoncer un événement, notre plateforme est là pour vous.
+    </p>
+
+    <h2 class="text-lg font-bold mt-2">
+        📌 Pourquoi nous existons
+    </h2>
+    <p>
+        Tout a commencé avec la fermeture annoncée de la rubrique <strong>"Petites annonces" du site de la Cité de la musique – Philharmonie de Paris</strong>, une ressource précieuse pour les musiciens de tous horizons.
+        Ce retrait laisse un vide dans l’écosystème musical, notamment pour les amateurs, les enseignants indépendants, les ensembles ou les structures locales.
+        <br>
+        Nous avons déjà vécu cela : à l’origine de ce projet, nous avons également créé le site <a href="https://petites-annonces-theatre.fr">petites-annonces-theatre</a>, en réaction à la disparition de la rubrique annonces de theatre-contemporain.net.
+        Aujourd’hui, ce site rencontre un <strong>large succès dans le monde du théâtre amateur</strong>, et nous avons choisi d’appliquer la même logique au monde musical : <strong>offrir un espace libre, simple et accessible</strong>, où la passion peut continuer à circuler.
+    </p>
+
+    <h2 class="text-lg font-bold mt-2">
+        ⚙️ Comment ça marche
+    </h2>
+    <p>
+        Sur <a href="{% url 'index' %}" class="link">petites-annonces-musique</a>, vous pouvez :
+    <ul>
+        <li>
+            <span><i class="fa-solid fa-check"></i></span> <span class="font-semibold">Publier des annonces</span> : emploi, collaborations, cours, stages, lieux, services, événements…
+        </li>
+        <li>
+            <span><i class="fa-solid fa-check"></i></span> <span class="font-semibold">Répondre à des annonces</span>
+        </li>
+    </ul>
+    <p>
+        Et c'est tout !
+        <br>
+        Pas besoin de faire compliqué quand on peut faire simple : nous nous sommes inspirés du fonctionnement de la
+        plateforme de la Philharmonie de Paris et de notre expérience avec
+        <a href="https://petites-annonces-theatre.fr">petites-annonces-theatre</a> pour concevoir un
+        outil <strong>pratique, rapide et sans friction</strong>.
+    </p>
+    <h2 class="text-lg font-bold mt-2">🌍 Un site gratuit et hébergé en Europe</h2>
+    <p>
+        Le site fonctionne avec des services modernes et performants, répartis sur
+        plusieurs plateformes toutes hébergées en Europe :
+    <ul>
+        <li>
+            <strong>Moteur du site : <a href="https://railway.app">Railway</a></strong>, une plateforme cloud qui assure
+            une gestion simple et efficace des ressources du site. Le serveur est situé à Amsterdam, garantissant
+            rapidité et proximité pour nos utilisateurs européens.
+        </li>
+        <li>
+            <strong>Base de données : <a href="https://neon.tech/">NeonDB</a></strong>, un service cloud performant, localisé à Francfort,
+            assurant une faible latence pour une navigation rapide.
+        </li>
+        <li>
+            <strong>Serveur Mail : <a href="https://www.mailjet.com/"></a>MailJet</strong>, pour une gestion fiable des emails transactionnels.
+        </li>
+    </ul>
+    Ces choix techniques nous permettent de <strong>maintenir le site sans publicité, totalement gratuit et accessible à tous.</strong>
+    Mais ces services ont un coût. Pour continuer à faire vivre ce projet, nous avons mis en place une
+    <a href="https://ko-fi.com/petitesannoncesmusique">page de soutien</a> où vous pouvez, si vous le souhaitez,
+    participer au financement des frais de fonctionnement, estimés à environ 30€/mois.
+    </p>
+    <h2 class="text-lg font-bold mt-2">🍪 Site garanti sans cookies ajoutés !</h2>
+    <p>
+        Notre site n’utilise que des cookies strictement nécessaires à son bon fonctionnement.
+        Ces cookies garantissent une navigation fluide et sécurisée et respectueuse de votre vie privée :
+    <ul>
+        <li>
+            <strong>Cookie de session</strong> : permet de maintenir votre connexion active et facilite votre
+            navigation en mémorisant certaines préférences pendant votre visite.
+        </li>
+        <li>
+            <strong>Cookie CSRF</strong> : protège vos données en empêchant les attaques de type
+            "Cross-Site Request Forgery" lors de l’envoi de formulaires.
+        </li>
+    </ul>
+    <p>
+        Ces cookies <strong>ne collectent aucune donnée personnelle à des fins publicitaires ou de suivi</strong>.
+        Ils sont indispensables pour assurer la sécurité et la stabilité du site.
+        Conformément à la directive RGPD, <strong>leur utilisation ne nécessite donc pas de consentement préalable</strong>.
+    </p>
+    <h2 class="text-lg font-bold mt-2">
+        💬 Soutenez le site
+    </h2>
+    <p>
+        Si vous appréciez <a href="{% url 'index' %}" class="link">petites-annonces-musique</a>
+        et souhaitez participer à son maintien, vous pouvez désormais <strong>soutenir
+        l'initiative via une <a class="link" href="https://ko-fi.com/petitesannoncesmusique">page dédiée</a></strong>.
+        Nous n'avons pas encore énormément de recul sur les frais de fonctionnement mensuels du site
+        mais ils devraient s'élever à environ une trentaine d'euros.
+        Votre contribution permettra de couvrir ces coûts tout en conservant le site sans publicité
+        et totalement gratuit.
+    </p>
+    <h2 class="text-lg font-bold mt-2">
+        🎵 Rejoignez-nous
+    </h2>
+    <p>
+        Nous vous invitons à <strong>faire partie de cette nouvelle communauté musicale</strong>.
+        <br>
+        Ensemble, nous pouvons faire vivre un espace où les rencontres artistiques se multiplient,
+        où les projets prennent vie, et où la passion de la musique continue à circuler librement.
+    </p>
+
+    <p class="mt-2 italic text-lg">
+        Merci de votre visite et bienvenue dans notre communauté musicale !
+    </p>
+
+</div>
+{% endblock main %}

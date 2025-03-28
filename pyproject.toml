@@ -1,0 +1,19 @@
+[project]
+name = "pam"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dj-database-url>=2.3.0",
+    "django-browser-reload>=1.18.0",
+    "django-turnstile>=0.1.2",
+    "django>=5.1.7",
+    "fontawesomefree>=6.6.0",
+    "gunicorn>=23.0.0",
+    "mistralai>=1.6.0",
+    "psycopg[binary,pool]>=3.2.6",
+    "python-dotenv>=1.1.0",
+    "pytz>=2025.2",
+    "whitenoise>=6.9.0",
+]
