@@ -13,7 +13,12 @@ from moderation.services import moderate_text
 # Create your views here.
 def index(request):
     all_offers = Offer.objects.filter(filled=False).filter(Q(moderation__isnull=True) | Q(moderation__passed=True)).order_by('-created_on')
-    return render(request, 'core/index.html', {'all_offers': all_offers})
+    return render(request, 'core/index.html',
+                  {
+                      'all_offers': all_offers,
+                      'style_choices': Offer.STYLE_CHOICES,
+                      'instrument_choices': Offer.INSTRUMENT_CHOICES,
+                  })
 
 
 def signup(request):
@@ -115,18 +120,43 @@ def offer(request, offer_id: int):
 
 
 def offer_search(request):
-    search_query = request.POST.get('search')
+    search_data = request.POST
+
+    # Champs du formulaire
+    search_query = search_data.get('search', '').strip()
+    section = search_data.get('section')
+    offer_type = search_data.get('type')
+    category = search_data.get('category')
+    style = search_data.get('style')
+    instrument = search_data.get('instrument')
+
+    # Base queryset
+    results = Offer.objects.filter(filled=False).filter(
+        Q(moderation__isnull=True) | Q(moderation__passed=True)
+    )
+
+    # Filtres dynamiques
     if search_query:
-        results = Offer.objects.filter(
-            filled=False
-        ).filter(
-            Q(moderation__isnull=True) | Q(moderation__passed=True)
-        ).filter(
-            Q(title__icontains=search_query) | Q(summary__icontains=search_query) | Q(city__icontains=search_query)
+        results = results.filter(
+            Q(title__icontains=search_query) |
+            Q(summary__icontains=search_query) |
+            Q(city__icontains=search_query)
         )
-    else:
-        # If no query is provided, return all books
-        results = Offer.objects.filter(filled=False).filter(Q(moderation__isnull=True) | Q(moderation__passed=True))
+
+    if section:
+        results = results.filter(section=section)
+
+    if offer_type:
+        results = results.filter(type=offer_type)
+
+    if category:
+        results = results.filter(category=category)
+
+    if style:
+        results = results.filter(style=style)
+
+    if instrument:
+        results = results.filter(instrument=instrument)
 
     context = {
         'all_offers': results.order_by('-created_on')

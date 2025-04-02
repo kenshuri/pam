@@ -9,10 +9,13 @@
     <link rel="icon" type="image/png" href="{% static 'mask.svg' %}"/>
     <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
-    <script src="https://unpkg.com/htmx.org@1.8.0" integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc" crossorigin="anonymous" defer></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script defer src="https://unpkg.com/@alpinejs/ui@3.14.9/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.14.9/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.14.9/dist/cdn.min.js"></script>
     <script data-goatcounter="https://kdgfttcq89tt.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0/web.js"></script>
+    <style>[x-cloak] { display: none !important; }</style>
     <title>
         {% block title %}
         {% endblock title %}
@@ -73,11 +76,11 @@
 <footer class="footer sm:footer-horizontal items-center p-4 bg-neutral text-neutral-content max-w-3xl mx-auto lg:max-w-4xl xl:max-w-6xl mt-2">
     <nav>
         <div class="flex items-center">
-        <div class="avatar">
-            <div class="w-16 md:w-24 rounded">
-                <img alt="logo" src="{% static 'mask.svg' %}" />
+            <div class="avatar">
+                <div class="w-16 md:w-24 rounded">
+                    <img alt="logo" src="{% static 'mask.svg' %}" />
+                </div>
             </div>
-        </div>
             <div class="font-semibold tracking-wide">
                 Petites Annonces Musique
             </div>
